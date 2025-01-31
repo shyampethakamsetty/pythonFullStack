@@ -1,0 +1,6 @@
+Flask
+pandas
+textblob
+Flask-Session
+Flask-PyMongo
+pymongo

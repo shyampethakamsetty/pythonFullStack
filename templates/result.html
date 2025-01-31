@@ -1,0 +1,39 @@
+<!-- templates/result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Results</title>
+</head>
+<body>
+    <h2>Sentiment Analysis Results</h2>
+    <ul>
+        <li>Positive: {{ data.sentiment_counts.get("Positive", 0) }}</li>
+        <li>Negative: {{ data.sentiment_counts.get("Negative", 0) }}</li>
+        <li>Neutral: {{ data.sentiment_counts.get("Neutral", 0) }}</li>
+    </ul>
+
+    <h3>Sample Reviews</h3>
+    <h4>Positive</h4>
+    <ul>
+        {% for review in data.positive_reviews[:5] %}
+            <li>{{ review }}</li>
+        {% endfor %}
+    </ul>
+
+    <h4>Negative</h4>
+    <ul>
+        {% for review in data.negative_reviews[:5] %}
+            <li>{{ review }}</li>
+        {% endfor %}
+    </ul>
+
+    <h4>Neutral</h4>
+    <ul>
+        {% for review in data.neutral_reviews[:5] %}
+            <li>{{ review }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
